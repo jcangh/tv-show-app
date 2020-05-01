@@ -1,0 +1,24 @@
+<app-index></app-index>
+<br>
+<div class="col-md-6 user-container">
+    <h2 style="margin: auto">Shows</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Show Name</th>
+        <th>Summary</th>
+        <th>language</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let show of shows | paginate:{itemsPerPage: 5, currentPage:p}">
+        <td>{{show.name}}</td>
+        <td>{{show.summary}}</td>
+        <td>{{show.language}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <div id="pagination">
+			<pagination-controls (pageChange)="p=$event"></pagination-controls>
+		</div>
+  </div>

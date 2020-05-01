@@ -1,0 +1,38 @@
+<app-index></app-index>
+<br>
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Add User</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+      </div>
+  
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Role:</label>
+        <input formControlName="role" placeholder="role" name="age" class="form-control" id="role">
+      </div>
+  
+      <button class="btn btn-success">Add</button>
+      &nbsp;&nbsp;
+      <button class="btn btn-danger" style="width:100px" (click)="cancel()">Cancel</button>
+      <div *ngIf="createError" class="error">
+        <div>{{errorMessage}}</div>
+      </div>
+    </form>
+  </div>
